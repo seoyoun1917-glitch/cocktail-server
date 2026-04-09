@@ -1,0 +1,27 @@
+{
+  "name": "cocktail-server",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/seoyoun1917-glitch/cocktail-server#readme",
+  "bugs": {
+    "url": "https://github.com/seoyoun1917-glitch/cocktail-server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seoyoun1917-glitch/cocktail-server.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.20.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
