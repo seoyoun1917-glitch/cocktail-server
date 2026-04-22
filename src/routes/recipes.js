@@ -8,13 +8,18 @@ const router = express.Router(); // Router 객체 생성
 // router는 app처럼 get, post, put, delete 사용 가능
 
 // DB에 값을 추가(post)
+// post http://localhost:4000/recipes
 router.post("/", authMiddleware, upload.single("image"), async (req, res) => {
   try {
-    const { name, description, ingredients, directions } = req.body;
-    console.log(ingredients);
-    console.log(directions);
+    const { name, description } = req.body;
     const image = req.file.filename; // 업로드된 파일의 이름
     const userId = req.userId;
+    // FormData로 전송된 JSON 문자열 파싱
+    const ingredients = JSON.parse(req.body.ingredients);
+    const directions = JSON.parse(req.body.directions);
+
+    console.log(ingredients);
+
     await pool.query(
       "INSERT INTO recipes(user_id, name, image, description) VALUES(?, ?, ?, ?)",
       [userId, name, image, description],

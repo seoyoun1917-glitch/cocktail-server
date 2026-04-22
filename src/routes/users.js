@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken"; // JWT 토큰 생성 라이브러리
 
 const router = express.Router();
 
-// /users/register
+// http://localhost:4000/users/register
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
