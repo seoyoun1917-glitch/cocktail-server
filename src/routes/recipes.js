@@ -10,7 +10,9 @@ const router = express.Router(); // Router 객체 생성
 // DB에 값을 추가(post)
 router.post("/", authMiddleware, upload.single("image"), async (req, res) => {
   try {
-    const { name, description } = req.body;
+    const { name, description, ingredients, directions } = req.body;
+    console.log(ingredients);
+    console.log(directions);
     const image = req.file.filename; // 업로드된 파일의 이름
     const userId = req.userId;
     await pool.query(
